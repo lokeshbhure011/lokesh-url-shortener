@@ -134,7 +134,7 @@ python cleanup.py
 Homepage
 -----------
 
-![alt text](homepage.png)
+![alt text](screenshots/homepage.png)
 
 Shortened link display & QR code preview
 ---------------------------------------------------
@@ -289,3 +289,4 @@ class URL(db.Model):
 
 
 ---------------------------------------------------
+
