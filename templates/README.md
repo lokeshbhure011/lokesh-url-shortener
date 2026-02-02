@@ -286,4 +286,6 @@ class URL(db.Model):
 ```static/style.css```
 
 -> Custom styles for modern, recruiter-friendly UI
+
+
 ---------------------------------------------------
