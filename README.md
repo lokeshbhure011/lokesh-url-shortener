@@ -139,7 +139,7 @@ Homepage
 Shortened link display & QR code preview
 ---------------------------------------------------
 
-![alt text](screenshots/short url and qr code.png)
+![alt text](screenshots/short%20url%20and%20qr%20code.png)
 
 
  -> URL input form
@@ -289,5 +289,6 @@ class URL(db.Model):
 
 
 ---------------------------------------------------
+
 
 
