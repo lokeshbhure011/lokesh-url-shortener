@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URL Statistics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="stats-section">
+        <div class="stats-container">
+            <h1>📊 URL Statistics</h1>
+
+            <p><strong>Original URL:</strong></p>
+            <div class="url-box">
+                <a href="{{ url.original_url }}" target="_blank">{{ url.original_url }}</a>
+            </div>
+
+            <p><strong>Short URL:</strong></p>
+            <div class="url-box">
+                <a href="{{ url_for('redirect_url', short_key=url.short_url, _external=True) }}" target="_blank">
+                    {{ request.url_root }}{{ url.short_url }}
+                </a>
+            </div>
+
+            <p><strong>Total Clicks:</strong> {{ url.clicks }}</p>
+            <img src="{{ url_for('static', filename=url.short_url + '.png') }}" alt="QR Code">
+
+            <div class="back-home">
+                <a href="{{ url_for('index') }}" class="btn-home">⬅ Back to Home</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>Powered by <strong>Flask</strong> + <strong>Waitress</strong> | Built by Lokesh Bhure</p>
+            <p>
+                <a href="https://github.com/lokeshbhure011" target="_blank">GitHub</a> |
+                <a href="https://www.linkedin.com/in/lokeshbhure011" target="_blank">LinkedIn</a>
+            </p>
+        </footer>
+    </main>
+</body>
+</html>

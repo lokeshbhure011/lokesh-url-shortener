@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lokesh's URL Shortener</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>🚀 Lokesh Bhure's URL Shortener</h1>
+        <p class="tagline">Simplify your links, share them easily, and track clicks with QR codes.</p>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <form method="POST">
+                <input type="url" name="url" placeholder="Enter a long URL" required>
+                <button type="submit">Shorten</button>
+            </form>
+        </section>
+
+        {% if short_url %}
+        <section class="result-section">
+            <h2>Shortened Link</h2>
+            <p><a href="{{ short_url }}" target="_blank">{{ short_url }}</a></p>
+            <img src="{{ qr_code }}" alt="QR Code">
+            <p><a href="{{ url_for('stats', short_key=short_url.split('/')[-1]) }}">View Stats</a></p>
+        </section>
+        {% endif %}
+    </main>
+
+    <footer>
+        <p>Powered by <strong>Flask</strong> + <strong>Waitress</strong> | Built by Lokesh Bhure</p>
+        <p>
+            <a href="https://github.com/lokeshbhure011" target="_blank">GitHub</a> |
+            <a href="https://www.linkedin.com/in/lokeshbhure011" target="_blank">LinkedIn</a>
+        </p>
+    </footer>
+</body>
+</html>
